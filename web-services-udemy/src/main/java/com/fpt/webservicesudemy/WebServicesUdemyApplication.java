@@ -1,4 +1,4 @@
-package com.fpt.web_services_udemy;
+package com.fpt.webservicesudemy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

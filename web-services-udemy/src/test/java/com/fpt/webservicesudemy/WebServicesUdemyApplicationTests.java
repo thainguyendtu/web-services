@@ -1,4 +1,4 @@
-package com.fpt.web_services_udemy;
+package com.fpt.webservicesudemy;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

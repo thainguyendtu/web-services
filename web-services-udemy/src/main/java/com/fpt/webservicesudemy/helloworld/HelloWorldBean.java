@@ -1,4 +1,4 @@
-package com.fpt.web_services_udemy.helloworld;
+package com.fpt.webservicesudemy.helloworld;
 
 public class HelloWorldBean {
 

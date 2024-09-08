@@ -1,4 +1,4 @@
-package com.fpt.web_services_udemy.user;
+package com.fpt.webservicesudemy.user;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

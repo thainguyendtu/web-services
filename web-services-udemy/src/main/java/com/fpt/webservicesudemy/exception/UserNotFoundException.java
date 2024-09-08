@@ -1,4 +1,4 @@
-package com.fpt.web_services_udemy.exception;
+package com.fpt.webservicesudemy.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
