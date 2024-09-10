@@ -1,5 +1,6 @@
 package com.fpt.webservicesudemy.user;
 
+import com.fpt.webservicesudemy.dto.CreateUserDTO;
 import com.fpt.webservicesudemy.dto.UserResponseDTO;
 import com.fpt.webservicesudemy.exception.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponseDTO retrieveUser(Integer id) {
-        Optional<User> userOptional = userRepository.findUserOptionalById(id);
+        Optional<User> userOptional = userRepository.findUserOptionalByIdAndDelFlagFalse(id);
         if (userOptional.isEmpty()) {
             throw new UserNotFoundException("User not found for id: " + id);
         }
@@ -45,13 +46,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User addUser(User user) {
-        return userRepository.save(user);
+    public User addUser(CreateUserDTO dto) {
+        User userToAdd = new User();
+        userToAdd.setName(dto.getName());
+        userToAdd.setBirthDate(dto.getBirthDate());
+        return userRepository.save(userToAdd);
     }
 
     @Override
     public void deleteUser(Integer id) {
-        Optional<User> userOptional = userRepository.findUserOptionalById(id);
+        Optional<User> userOptional = userRepository.findUserOptionalByIdAndDelFlagFalse(id);
         if (userOptional.isEmpty()) {
             throw new UserNotFoundException("User not found for id: " + id);
         }

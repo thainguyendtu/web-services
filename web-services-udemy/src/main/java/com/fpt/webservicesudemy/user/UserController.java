@@ -1,6 +1,8 @@
 package com.fpt.webservicesudemy.user;
 
 import com.fpt.webservicesudemy.common.APIResponse;
+import com.fpt.webservicesudemy.dto.CreateUserDTO;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -37,11 +39,11 @@ public class UserController {
     }
 
     @PostMapping
-    public APIResponse<?> addUser(@RequestBody User user) {
+    public APIResponse<?> addUser(@Valid @RequestBody CreateUserDTO createUserDTO) {
         return APIResponse.builder()
                 .statusCode(HttpStatus.CREATED.value())
-                .message("Get users data successfully")
-                .data(userService.addUser(user))
+                .message("Add user successfully")
+                .data(userService.addUser(createUserDTO))
                 .build();
     }
 
@@ -50,7 +52,7 @@ public class UserController {
         userService.deleteUser(id);
         return APIResponse.builder()
                 .statusCode(HttpStatus.OK.value())
-                .message("Get users data successfully")
+                .message("Delete data successfully")
                 .build();
     }
 }

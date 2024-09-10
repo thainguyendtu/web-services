@@ -1,5 +1,6 @@
 package com.fpt.webservicesudemy.user;
 
+import com.fpt.webservicesudemy.dto.CreateUserDTO;
 import com.fpt.webservicesudemy.dto.UserResponseDTO;
 
 import java.util.List;
@@ -10,7 +11,7 @@ public interface UserService {
 
     UserResponseDTO retrieveUser(Integer id);
 
-    User addUser(User user);
+    User addUser(CreateUserDTO createUserDTO);
 
     void deleteUser(Integer id);
 }

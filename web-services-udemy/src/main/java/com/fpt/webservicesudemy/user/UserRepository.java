@@ -11,5 +11,5 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     List<User> findByDelFlagFalse();
 
-    Optional<User> findUserOptionalById(Integer id);
+    Optional<User> findUserOptionalByIdAndDelFlagFalse(Integer id);
 }
